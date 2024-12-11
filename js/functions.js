@@ -24,3 +24,30 @@ function formatNumbers(number) {
 
   return number;
 }
+
+function saveState(channelName,videoName,videoDescription) {
+  localStorage.setItem("channelName",channelName);
+  localStorage.setItem("videoName",videoName);
+  localStorage.setItem("videoDescription",videoDescription);
+  setState()
+}
+
+function setState() {
+  const channelName = localStorage.getItem("channelName");
+  const videoName = localStorage.getItem("videoName");
+  const videoDescription = localStorage.getItem("videoDescription");
+
+  if(channelName.trim().length != 0) {
+    $("#channel-name").val(channelName)
+    $(".channel-title").text(channelName)
+  }
+  if(videoName.trim().length != 0) {
+    $("#video-name").val(videoName)
+    $(".channel-video-name").text(videoName)
+    document.title = videoName
+  }
+  if(videoDescription.trim().length != 0) {
+    $("#video-description").val(videoDescription)
+    $(".description").text(videoDescription)
+  }
+}

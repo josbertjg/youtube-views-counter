@@ -4,14 +4,21 @@ $(document).ready(()=>{
   let countE = 0;
   let countR = 0;
   let keyPressed = null;
+  const channelName = $("#channel-name");
+  const videoName = $("#video-name");
+  const videoDescription = $("#video-description");
   const infoModal = new bootstrap.Modal(document.getElementById("info-modal"));
+
+  // Mostrando el modal a penas carga la ventana
   infoModal.show()
+
+  // Si existen valores en el local storage, entonces se setea en los inputs
+  setState();
   
   // Eventos de la ventana
   window.onkeydown = (event) => keyPressed = event.key;
   
   window.onwheel = (event) => {
-    infoModal.hide()
     const direction = Math.sign(event.deltaY) < 0
 
     if(keyPressed == 'q') countQ = updateCounter(countQ,direction,6)
@@ -24,4 +31,12 @@ $(document).ready(()=>{
 
   // Eventos de botones de accion
   $(".btn-info").click(()=>infoModal.show())
+
+  // Eventos del modal
+  $("#btn-accept").click(()=>{
+    if(channelName.val().trim().length != 0 && videoName.val().trim().length != 0 && videoDescription.val().trim().length != 0){
+      infoModal.hide();
+      saveState(channelName.val(),videoName.val(),videoDescription.val())
+    }
+  })
 })

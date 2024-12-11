@@ -65,12 +65,12 @@
   <footer class="container-fluid">
     <div class="row">
       <section class="col-xxl-3 col-lg-4 col-md-5 col-12 mb-3 fsection-1">
-        <h1>Confirmación Cristo Rey 2024 Podcast #2</h1>
+        <h1 class="channel-video-name">Nombre del video</h1>
         <div class="channel-container">
           <img src="./assets/img/espiritu-santo-logo.webp" alt="avatar">
           <div class="channel-info">
             <span class="channel-title">
-              Confirmación Cristo Rey
+              Nombre del Canal
               <span class="material-symbols-outlined">check</span>
             </span>
             <span class="subs-count">0 suscriptores</span>
@@ -128,12 +128,11 @@
   </footer>
 
   <!-- Modal -->
-  <div class="modal fade" id="info-modal" tabindex="-1" aria-labelledby="info-modal-label" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
+  <div class="modal fade" id="info-modal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="info-modal-label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
       <div class="modal-content">
         <div class="modal-header">
           <h1 class="modal-title fs-5" id="info-modal-label">¿Como funciona?</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
           <p class="fw-bold">La página es una recreación de Youtube, en donde puedes controlar las visualizaciones, likes, dislikes y los suscriptores del canal.</p>
@@ -146,10 +145,37 @@
             <button class="btn btn-warning">R = VISUALIZACIONES</button>
           </div>
 
-          <p class="fw-bold color-muted">Nota: Puedes volver a abrir este panel en cualquier momento en el boton "Información" de abajo a la derecha.</p>
+          <span class="fw-bold fs-5">Ingresa los valores de la página:</span>
+          <form class="was-validated">
+            <div class="my-1">
+              <label for="channel-name" class="form-label">Nombre del Canal:</label>
+              <input type="text" class="form-control" id="channel-name" placeholder="Nombre:" required/>
+              <div class="invalid-feedback">
+                Porfavor ingresa un valor para continuar.
+              </div>
+            </div>
+
+            <div class="mb-1">
+              <label for="video-name" class="form-label">Nombre del Video:</label>
+              <input type="text" class="form-control" id="video-name" placeholder="Video:" required/>
+              <div class="invalid-feedback">
+                Porfavor ingresa un valor continuar.
+              </div>
+            </div>
+
+            <div class="mb-1">
+              <label for="video-description" class="form-label">Descripción del Video:</label>
+              <textarea class="form-control" id="video-description" placeholder="Descripción:" required></textarea>
+              <div class="invalid-feedback">
+                Porfavor ingresa un valor continuar.
+              </div>
+            </div>
+          </form>
+
+          <p class="fw-semibold text-secondary">Nota: Puedes volver a abrir este panel en cualquier momento en el boton "Información" de abajo a la derecha.</p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-primary" id="btn-accept">Aceptar</button>
         </div>
       </div>
     </div>
