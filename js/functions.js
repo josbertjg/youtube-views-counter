@@ -33,9 +33,9 @@ function saveState(channelName,videoName,videoDescription) {
 }
 
 function setState() {
-  const channelName = localStorage.getItem("channelName");
-  const videoName = localStorage.getItem("videoName");
-  const videoDescription = localStorage.getItem("videoDescription");
+  const channelName = localStorage.getItem("channelName") || "";
+  const videoName = localStorage.getItem("videoName") || "";
+  const videoDescription = localStorage.getItem("videoDescription") || "";
 
   if(channelName.trim().length != 0) {
     $("#channel-name").val(channelName)
