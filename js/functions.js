@@ -5,10 +5,10 @@ function updateCounter(counter,direction,interval = 5){
 
 function updateViewContent(counters) {
 
-  $(".subs-count").text(`${formatNumbers(counters.countQ)} Suscriptores`)
-  $(".like-count").text(`${formatNumbers(counters.countW)}`)
-  $(".dislike-count").text(`${formatNumbers(counters.countE)}`)
-  $(".views-count").text(`${formatNumbers(counters.countR)}`)
+  $(".subs-count, .subs").text(`${formatNumbers(counters.countQ)}`)
+  $(".like-count, .likes").text(`${formatNumbers(counters.countW)}`)
+  $(".dislike-count, .dislikes").text(`${formatNumbers(counters.countE)}`)
+  $(".views-count, .views").text(`${formatNumbers(counters.countR)}`)
 
 }
 

@@ -8,6 +8,7 @@ $(document).ready(()=>{
   const videoName = $("#video-name");
   const videoDescription = $("#video-description");
   const infoModal = new bootstrap.Modal(document.getElementById("info-modal"));
+  const finishTransmision = new bootstrap.Modal(document.getElementById("finish-modal"));
 
   // Mostrando el modal a penas carga la ventana
   infoModal.show()
@@ -31,6 +32,7 @@ $(document).ready(()=>{
 
   // Eventos de botones de accion
   $(".btn-info").click(()=>infoModal.show())
+  $(".btn-finish").click(()=>finishTransmision.show())
 
   // Eventos del modal
   $("#btn-accept").click(()=>{
