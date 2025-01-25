@@ -60,11 +60,11 @@ function handleDislikesAndLikes(counters, keyPressed, direction) {
   }
 
   if (counters.countE >= counters.countW * 0.5 && keyPressed === 'e') {
-    counters.countW = Math.max(0, counters.countW - 1);
+    counters.countW = Math.max(0, counters.countW - 12);
   }
 
   if (counters.countW >= counters.countE * 0.5 && keyPressed === 'w') {
-    counters.countE = Math.max(0, counters.countE - 1);
+    counters.countE = Math.max(0, counters.countE - 12);
   }
 
   updateViewContent(counters); 
