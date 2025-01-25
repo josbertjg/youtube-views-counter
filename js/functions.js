@@ -51,3 +51,21 @@ function setState() {
     $(".description").text(videoDescription)
   }
 }
+
+function handleDislikesAndLikes(counters, keyPressed, direction) {
+  if (keyPressed === 'w') {
+    counters.countW = updateCounter(counters.countW, direction, 12);
+  } else if (keyPressed === 'e') {
+    counters.countE = updateCounter(counters.countE, direction, 12);
+  }
+
+  if (counters.countE >= counters.countW * 0.5 && keyPressed === 'e') {
+    counters.countW = Math.max(0, counters.countW - 1);
+  }
+
+  if (counters.countW >= counters.countE * 0.5 && keyPressed === 'w') {
+    counters.countE = Math.max(0, counters.countE - 1);
+  }
+
+  updateViewContent(counters); 
+}
