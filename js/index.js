@@ -20,12 +20,19 @@ $(document).ready(() => {
   // Evento de teclado
   window.onkeydown = (event) => (keyPressed = event.key);
 
-  // Evento de scroll optimizado para manejar likes y dislikes
+  // Evento de scroll optimizado para manejar likes, dislikes, suscriptores y vistas
   window.onwheel = (event) => {
     const direction = Math.sign(event.deltaY) < 0;
     const counters = { countQ, countW, countE, countR };
 
-    // Handle likes and dislikes with the scroll
+    // Control de suscriptores (Q) y vistas (R)
+    if (keyPressed === 'q') {
+      counters.countQ = updateCounter(counters.countQ, direction, 6);
+    } else if (keyPressed === 'r') {
+      counters.countR = updateCounter(counters.countR, direction, 132);
+    }
+
+    // Control de likes y dislikes (W y E)
     handleDislikesAndLikes(counters, keyPressed, direction);
 
     // Update global counters
@@ -33,6 +40,9 @@ $(document).ready(() => {
     countW = counters.countW;
     countE = counters.countE;
     countR = counters.countR;
+
+    // Actualizar la vista
+    updateViewContent(counters);
   };
 
   // Botones de acción

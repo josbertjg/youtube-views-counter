@@ -361,6 +361,91 @@ footer .actions-container .mute {
   color: white;
 }
 
-  
+
+/* Ajuste del modal a tamaño grande */
+.modal-lg {
+  max-width: 900px;
+}
+
+/* Asegurar que los campos estén en línea correctamente */
+.d-flex.justify-content-between .form-control {
+  background-color: #222;
+  color: white;
+  border: 1px solid #444;
+}
+
+.d-flex.justify-content-between .form-label {
+  font-weight: bold;
+  color: #ff5555;
+}
+
+.highlight-letter b {
+  font-weight: bold;
+  color: #ff5555;
+  transition: color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.highlight-letter {
+  cursor: pointer;
+}
+
+.highlight-letter:hover b {
+  color: #ffffff;
+  transform: scale(1.1);
+  text-shadow: 0px 0px 5px rgba(255, 85, 85, 0.8);
+}
+
+.stat-box {
+  width: 120px;
+  min-height: 150px;
+  padding: 10px;
+  text-align: center;
+  background: #222;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(255, 0, 0, 0.3);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  cursor: pointer; 
+}
+
+/* Efecto al pasar el mouse sobre las cards */
+.stat-box:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 0px 15px rgba(255, 85, 85, 0.8);
+  background: #333;
+}
+
+#channel-name, #video-name, #video-description {
+  cursor: text;
+}
+
+/* Botones dentro del modal */
+.modal-footer .btn-primary {
+  cursor: pointer;
+}
+
+/* Todo lo que tenga clase "btn" dentro del modal es interactivo */
+.modal-body .btn {
+  cursor: pointer;
+}
+
+/* Estilo uniforme para Nombre del Canal, Nombre del Video y Descripción */
+.form-label {
+  font-weight: bold;
+  color: #ff5555; 
+}
+
+#channel-name::placeholder,
+#video-name::placeholder,
+#video-description::placeholder {
+  color: #bbb;
+}
+
+#channel-name, #video-name, #video-description {
+  color: white;
+  background-color: #222;
+  border: 1px solid #444;
+}
+
+
 
 /*# sourceMappingURL=index.css.map */

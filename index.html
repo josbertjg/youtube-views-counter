@@ -125,84 +125,77 @@
       </section>
 
       <section class="actions-container col-xxl-4 col-lg-2 col-12 text-center">
-        <button class="btn-action btn-info mute">Información</button>
-        <button class="btn-action btn-finish">Terminar transimisión</button>
-        <a href="https://josbertjg.github.io/" class="btn-action mute">¡Contáctame!</a>
+        <button class="btn-action btn-info mute text-center d-block">Información</button>
+        <button class="btn-action btn-finish text-center d-block">Terminar transimisión</button>
+        <a href="https://josbertjg.github.io/" class="btn-action mute text-center d-block">¡Contáctame!</a>
       </section>
     </div>
   </footer>
 
-  <!-- Modal Informacion -->
-  <div class="modal fade" id="info-modal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="info-modal-label" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="info-modal-label">¿Como funciona?</h1>
-        </div>
-        <div class="modal-body">
-          <p class="fw-bold">La página es una recreación de Youtube, en donde puedes controlar las visualizaciones, likes, dislikes y los suscriptores del canal.</p>
-          <p>Para hacerlo debes presionar la tecla correspondiente a cada función y luego hacer scroll con tu mouse para aumentar o disminuir la cantidad.</p>
+<!-- Modal Informacion (Cambio a modal-lg) -->
+<div class="modal fade" id="info-modal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="info-modal-label" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="info-modal-label">¿Cómo funciona?</h1>
+      </div>
+      <div class="modal-body">
+        <p class="fw-bold">La página es una recreación de Youtube, en donde puedes controlar las visualizaciones, likes, dislikes y los suscriptores del canal.</p>
+        <p>Para hacerlo debes presionar la tecla correspondiente a cada función y luego hacer scroll con tu mouse para aumentar o disminuir la cantidad.</p>
 
-          <div class="stats-container d-flex justify-content-center gap-4 mt-4">
-            <div class="stat-box text-center p-3 rounded shadow">
-              <span class="material-symbols-outlined text-danger" style="font-size: 2rem;">group</span>
-              <p class="fw-bold text-white mt-2"><span class="subs">0</span> Subs</p>
-              <small class="text-secondary">Presiona <b>Q</b> para modificar</small>
-            </div>
-            <div class="stat-box text-center p-3 rounded shadow">
-              <span class="material-symbols-outlined text-success" style="font-size: 2rem;">thumb_up</span>
-              <p class="fw-bold text-white mt-2"><span class="likes">0</span> Likes</p>
-              <small class="text-secondary">Presiona <b>W</b> para modificar</small>
-            </div>
-            <div class="stat-box text-center p-3 rounded shadow">
-              <span class="material-symbols-outlined text-warning" style="font-size: 2rem;">thumb_down</span>
-              <p class="fw-bold text-white mt-2"><span class="dislikes">0</span> Dislikes</p>
-              <small class="text-secondary">Presiona <b>E</b> para modificar</small>
-            </div>
-            <div class="stat-box text-center p-3 rounded shadow">
-              <span class="material-symbols-outlined text-info" style="font-size: 2rem;">visibility</span>
-              <p class="fw-bold text-white mt-2"><span class="views">0</span> Vistas</p>
-              <small class="text-secondary">Presiona <b>R</b> para modificar</small>
-            </div>
+        <!--  Nombre del Canal y Nombre del Video en Paralelo -->
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <div class="w-50 pe-2">
+            <label for="channel-name" class="form-label">Nombre del Canal:</label>
+            <input type="text" class="form-control" id="channel-name" placeholder="Nombre:" required />
+            <div class="invalid-feedback">Por favor ingresa un valor para continuar.</div>
           </div>
-          
-          
-
-          <span class="fw-bold fs-5">Ingresa los valores de la página:</span>
-          <form class="was-validated">
-            <div class="my-1">
-              <label for="channel-name" class="form-label">Nombre del Canal:</label>
-              <input type="text" class="form-control" id="channel-name" placeholder="Nombre:" required/>
-              <div class="invalid-feedback">
-                Porfavor ingresa un valor para continuar.
-              </div>
-            </div>
-
-            <div class="mb-1">
-              <label for="video-name" class="form-label">Nombre del Video:</label>
-              <input type="text" class="form-control" id="video-name" placeholder="Video:" required/>
-              <div class="invalid-feedback">
-                Porfavor ingresa un valor continuar.
-              </div>
-            </div>
-
-            <div class="mb-1">
-              <label for="video-description" class="form-label">Descripción del Video:</label>
-              <textarea class="form-control" id="video-description" placeholder="Descripción:" required></textarea>
-              <div class="invalid-feedback">
-                Porfavor ingresa un valor continuar.
-              </div>
-            </div>
-          </form>
-
-          <p class="fw-semibold text-secondary">Nota: Puedes volver a abrir este panel en cualquier momento en el boton "Información" de abajo a la derecha.</p>
+          <div class="w-50 ps-2">
+            <label for="video-name" class="form-label">Nombre del Video:</label>
+            <input type="text" class="form-control" id="video-name" placeholder="Video:" required />
+            <div class="invalid-feedback">Por favor ingresa un valor para continuar.</div>
+          </div>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-primary" id="btn-accept">Aceptar</button>
+
+        <!-- Campo de Descripción -->
+        <div class="mb-3">
+          <label for="video-description" class="form-label">Descripción del Video:</label>
+          <textarea class="form-control" id="video-description" placeholder="Descripción:" required></textarea>
+          <div class="invalid-feedback">Por favor ingresa un valor para continuar.</div>
         </div>
+
+        <div class="stats-container d-flex justify-content-center gap-4 mt-4">
+          <div class="stat-box text-center p-3 rounded shadow">
+            <span class="material-symbols-outlined text-danger" style="font-size: 2rem;">group</span>
+            <p class="fw-bold text-white mt-2"><span class="subs">0</span> Subs</p>
+            <small class="text-secondary highlight-letter" data-key="Q">Presiona <b>Q</b> para modificar</small>
+          </div>
+          <div class="stat-box text-center p-3 rounded shadow">
+            <span class="material-symbols-outlined text-success" style="font-size: 2rem;">thumb_up</span>
+            <p class="fw-bold text-white mt-2"><span class="likes">0</span> Likes</p>
+            <small class="text-secondary highlight-letter" data-key="W">Presiona <b>W</b> para modificar</small>
+          </div>
+          <div class="stat-box text-center p-3 rounded shadow">
+            <span class="material-symbols-outlined text-warning" style="font-size: 2rem;">thumb_down</span>
+            <p class="fw-bold text-white mt-2"><span class="dislikes">0</span> Dislikes</p>
+            <small class="text-secondary highlight-letter" data-key="E">Presiona <b>E</b> para modificar</small>
+          </div>
+          <div class="stat-box text-center p-3 rounded shadow">
+            <span class="material-symbols-outlined text-info" style="font-size: 2rem;">visibility</span>
+            <p class="fw-bold text-white mt-2"><span class="views">0</span> Vistas</p>
+            <small class="text-secondary highlight-letter" data-key="R">Presiona <b>R</b> para modificar</small>
+          </div>
+        </div>
+
+        <p class="fw-semibold text-secondary mt-3">Nota: Puedes volver a abrir este panel en cualquier momento en el botón "Información" de abajo a la derecha.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" id="btn-accept">Aceptar</button>
       </div>
     </div>
   </div>
+</div>
+
 
   <!-- Modal Terminar Transmisión -->
   <div class="modal fade" id="finish-modal" tabindex="-1" aria-labelledby="finish-modal-label" aria-hidden="true">
