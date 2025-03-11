@@ -53,18 +53,24 @@ function setState() {
 }
 
 function handleDislikesAndLikes(counters, keyPressed, direction) {
+  let prevCountW = counters.countW; 
+  let prevCountE = counters.countE; 
+
   if (keyPressed === 'w') {
     counters.countW = updateCounter(counters.countW, direction, 12);
   } else if (keyPressed === 'e') {
     counters.countE = updateCounter(counters.countE, direction, 12);
   }
 
-  if (counters.countE >= counters.countW * 0.5 && keyPressed === 'e') {
-    counters.countW = Math.max(0, counters.countW - 1);
+  if (counters.countE >= counters.countW * 0.5 && keyPressed === 'e' && counters.countW > 0) {
+    let incrementE = counters.countE - prevCountE; 
+    counters.countW = Math.max(0, counters.countW - incrementE); 
   }
 
-  if (counters.countW >= counters.countE * 0.5 && keyPressed === 'w') {
-    counters.countE = Math.max(0, counters.countE - 1);
+  if (counters.countW >= counters.countE * 0.5 && keyPressed === 'w' && counters.countE > 0) {
+    let incrementW = counters.countW - prevCountW; 
+    counters.countE = Math.max(0, counters.countE - incrementW);
   }
-  updateViewContent(counters); 
+
+  updateViewContent(counters);
 }
